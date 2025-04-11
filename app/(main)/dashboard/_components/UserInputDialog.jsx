@@ -17,6 +17,7 @@ import { api } from '@/convex/_generated/api';
 import { LoaderCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { UserContext } from '@/app/_context/UserContext';
+import { useUser } from '@stackframe/stack';
 
 
 const UserInputDialog = ({ children, coachingOption, placeholder }) => {
@@ -27,11 +28,18 @@ const UserInputDialog = ({ children, coachingOption, placeholder }) => {
     const [loading, setLoading] = useState(false);
     const [openDialog, setOpenDialog] = useState(false);
   const router = useRouter();
-  const {userData} = useContext(UserContext)
+  const { userData } = useContext(UserContext);
+  const user = useUser()
 
     const onClickNext = async () => {
        try {
          setLoading(true);
+         console.log({
+            topic: topic,
+            coachingOption: coachingOption?.name,
+          expertName: selectedExpert,
+            uid:userData?._id
+        })
         const result = await createDiscussionRoom({
             topic: topic,
             coachingOption: coachingOption?.name,
@@ -45,7 +53,8 @@ const UserInputDialog = ({ children, coachingOption, placeholder }) => {
            router.push("/discussion-room/"+result)
     } catch (error) {
         setOpenDialog(false);
-           setLoading(false);
+         setLoading(false);
+         console.error("roomErr", error);
         
        }
     }
