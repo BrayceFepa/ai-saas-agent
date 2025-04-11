@@ -19,14 +19,22 @@ const AuthProvider = ({ children }) => {
     }, [user]);
 
     const CreateNewUser = async () => {
-        setLoading(true);
+       try {
+           if (user) {
+             setLoading(true);
+        let userName = user.primaryEmail.split("@");
+        // console.log(userName)
         const result = await CreateUser({
-            name: user.displayName,
+            name: userName[0],
             email: user.primaryEmail
         });
         
         setUserData(result);
         setLoading(false);
+        }
+       } catch (error) {
+           console.log(error);
+       }
     }
 
   return (
