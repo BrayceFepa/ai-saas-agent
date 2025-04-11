@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
 
     const CreateNewUser = async () => {
        try {
-           if (user) {
+           if (user && !user.displayName) {
              setLoading(true);
         let userName = user.primaryEmail.split("@");
         // console.log(userName)
