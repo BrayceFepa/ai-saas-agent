@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
   return (
       <div>
           {
-              loading ? <div className='h-screen w-screen flex justify-center items-center'>
+              loading || !userData ? <div className='h-screen w-screen flex justify-center items-center'>
                   <Loader2Icon size={50} className='animate-spin text-primary'/>
               </div>: <UserContext.Provider value={{ userData, setUserData }}>
               {children}

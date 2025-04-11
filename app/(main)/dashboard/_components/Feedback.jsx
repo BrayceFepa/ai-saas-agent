@@ -15,6 +15,7 @@ const Feedback = () => {
    const [discussionRoomList, setDiscussionRoomList] = useState([]);
  
    useEffect(() => {
+     console.log(userData)
      userData && GetDiscussionRooms()
    },[userData])
  
