@@ -50,7 +50,7 @@ const DiscussionRoom = () => {
       const Expert = CoachingExpert?.find(
         (item) => item.name == DiscussionRoomData.expertName
       );
-      console.log(Expert);
+      // console.log(Expert);
       setExpert(Expert);
     }
   }, [DiscussionRoomData]);

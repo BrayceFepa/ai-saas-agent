@@ -16,7 +16,7 @@ const ViewSummary = () => {
   const DiscussionRoomData = useQuery(api.DiscussionRoom.getDiscussionRoom, {
     id: roomid,
   });
-  console.log(DiscussionRoomData);
+  // console.log(DiscussionRoomData);
   const GetAbstractImages = (option) => {
     const coachingOption = ExpertsList.find((item) => item.name == option);
     return coachingOption.abstract;

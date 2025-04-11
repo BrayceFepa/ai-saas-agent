@@ -17,7 +17,7 @@ const ChatBox = ({ conversation, enableFeedbackNotes,coachingOption }) => {
     try {
       setLoading(true);
       const result = await AiModelToGenerateFeedbackAndNotes(coachingOption, conversation);
-      console.log("result.content", result.content);
+      // console.log("result.content", result.content);
       await updateSummary({
         id: roomid,
         summary: result.content

@@ -20,7 +20,7 @@ const Feedback = () => {
  
    const GetDiscussionRooms = async () => {
      try {
-       console.log("userId",userData?._id)
+      //  console.log("userId",userData?._id)
        const result = await convex.query(api.DiscussionRoom.getAllDiscussionRooms, {
          uid: userData?._id
        });
