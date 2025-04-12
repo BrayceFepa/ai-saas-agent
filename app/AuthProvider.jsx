@@ -27,9 +27,14 @@ const AuthProvider = ({ children }) => {
           name: userName[0],
           email: user.primaryEmail,
         });
-        console.log("resultConv", result);
+        const result2 = await CreateUser({
+          name: userName[0],
+          email: user.primaryEmail,
+        });
+        console.log("resultConv2", result);
+        console.log("resultConv2", result2);
 
-        setUserData(result);
+        setUserData(result2);
         setLoading(false);
         return;
       }
@@ -40,9 +45,14 @@ const AuthProvider = ({ children }) => {
           name: user.displayName,
           email: user.primaryEmail,
         });
-        console.log("resultConv", result);
+        const result2 = await CreateUser({
+          name: user.displayName,
+          email: user.primaryEmail,
+        });
+        console.log("resultConv3", result);
+        console.log("resultConv4", result2);
 
-        setUserData(result);
+        setUserData(result2);
         setLoading(false);
       }
     } catch (error) {
