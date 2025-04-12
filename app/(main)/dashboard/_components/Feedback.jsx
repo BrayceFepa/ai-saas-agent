@@ -15,13 +15,13 @@ const Feedback = () => {
    const [discussionRoomList, setDiscussionRoomList] = useState([]);
  
    useEffect(() => {
-     console.log(userData)
+    //  console.log(userData)
      userData && GetDiscussionRooms()
    },[userData])
  
    const GetDiscussionRooms = async () => {
      try {
-       console.log("userId",userData)
+      //  console.log("userId",userData)
        const result = await convex.query(api.DiscussionRoom.getAllDiscussionRooms, {
          uid: userData?._id
        });

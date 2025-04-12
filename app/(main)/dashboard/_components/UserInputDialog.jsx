@@ -34,7 +34,7 @@ const UserInputDialog = ({ children, coachingOption, placeholder }) => {
     const onClickNext = async () => {
        try {
          setLoading(true);
-         console.log(userData)
+        //  console.log(userData);
         const result = await createDiscussionRoom({
             topic: topic,
             coachingOption: coachingOption?.name,
